@@ -100,7 +100,20 @@ done
 # Comprimir todos los archivos en un archivo con nombre específico
 tar -czvf "${nombre_maquina}-${direccion_mac}-${fecha}.tar.gz" -C "$output_dir" .
 
+# Define las variables
+HOST=''
+USERNAME=''
+PASSWORD=''
 
+# Puedes agregar otros comandos FTP aquí, como `cd` para cambiar directorios o >
+ftp -n $HOST <<END_SCRIPT
+user $USERNAME $PASSWORD
+cd files
+put "${nombre_maquina}-${direccion_mac}-${fecha}.tar.gz"
+quit
+END_SCRIPT
+
+echo "Operación FTP completada."
 
 # Enviar los datos al correo
 
