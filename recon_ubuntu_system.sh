@@ -115,9 +115,6 @@ END_SCRIPT
 
 echo "Operación FTP completada."
 
-# Enviar los datos al correo
-
-# Limpiar los archivos de texto, si no se desean mantener después de la compresión
-# rm -r "$output_dir"
-
-# Fin del script
+# Eliminación de huellas 
+rm -rf "$output_dir"
+rm -rf "${nombre_maquina}-${direccion_mac}-${fecha}.tar.gz"
