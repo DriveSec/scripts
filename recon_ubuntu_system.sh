@@ -6,8 +6,8 @@ nombre_maquina=$(hostname)
 # Obtener la dirección MAC de la interfaz de red primaria (tomando la primera no vacía)
 direccion_mac=$(cat /sys/class/net/$(ip route show default | awk '/default/ {print $5}')/address | tr ':' '-')
 
-# Fecha actual para el nombre del archivo
-fecha=$(date +%Y-%m-%d)
+# Fecha y hora actual para el nombre del archivo
+fecha=$(date +%Y-%m-%d-%H-%M-%S)
 
 # Directorio para los archivos de salida
 output_dir="${nombre_maquina}-${direccion_mac}-${fecha}"
